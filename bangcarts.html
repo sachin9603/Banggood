@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add cart Page </title>
+  <link rel="icon" href="https://www.banggood.in/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="stylesachin.css">
+
+  <style>
+    
+  body{
+  margin: 0px;
+  padding: 0px;
+  }
+    *{
+      margin:0%;
+      padding: 0%;
+      box-sizing: border-box;
+      /* background-color: white; */
+    }
+    table{
+      border-collapse: collapse;
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    border:0px;
+    }
+    table thead{
+    background:#ff6e26 ;
+      
+    color:white;
+    font-size: 20px;
+    /* font-family: system-ui; */
+    font-weight: bold;
+    }
+    table thead th{
+      padding:15px 3px;
+    }
+   table tbody  td{
+      padding: 7px;
+    }
+    img{
+      max-width: 80%;
+    max-height: 84px;
+    cursor: pointer;
+
+    }
+    button{
+      font-size: 20px;
+    padding: 1px 11px;
+    cursor: pointer;
+    }
+    .paymentDetails>span{
+      display: inline-block;
+    margin: 0px 10px;
+    font-size: 25px;
+    }
+    .cuppon{
+      
+      display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin: auto;
+    margin-top: 50px;
+    align-items: center;
+    /* border: 1px solid red; */
+    position:relative;
+     left:-430px;
+     top:-40px 
+
+    }
+    .price{
+      
+      display: flex;
+    justify-content: space-between;
+    width: 29%;
+    margin: auto;
+    margin-top: 50px;
+    align-items: center;
+    /* border: 1px solid red; */
+    position:relative;
+    right:-460px;
+    top:-80px
+    
+    }
+    .price{
+      margin-top: 0%;
+      /* border: 1px solid gray */
+      
+    }
+    .cuppon button{
+      padding: 5px 10px;
+      font-weight: 600;
+      text-transform: capitalize;
+      background-color: orange;
+      border-radius: 10px;
+
+    }
+    .cuppon input{
+      padding: 8px;
+      font-size: 20px;
+      /* border: none; */
+      
+    }
+    .price h3,.price h4{
+      font-size: 20px;
+      color: #0f1114;
+      margin: 10px 0px;
+    }
+    .nav{
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 12px;
+          background-color: rgb(248, 125, 36);
+          color: white;
+          /* border-radius: 20px; */
+          font-family: sans-serif;
+      }
+      .menus ul{
+          display: flex;
+
+      }
+      .menus ul li{
+          list-style-type: none;
+          color: white;
+          font-size: 20px;
+          margin-left: 30px;
+          text-transform: capitalize;
+          font-family: sans-serif;
+      }
+     .menus ul li a{
+          color: white;
+          text-decoration: none;
+          /* lds  */
+      }
+      .paymentDetails{
+        
+        width: 50%;
+        margin:auto;
+        margin-top: 18px;
+        /* border:1px solid gray; */
+        position:relative;
+    right:-405px;
+    top:-80px
+    
+      }
+      .paymentDetails input:first-child{
+        display: block;
+        margin: 16px 0px;
+      }
+      .inputDetails{
+        margin-top: 10px;
+       
+      }
+      .dateInput{
+        display: flex;
+        margin-top: 10px;
+        /* border: 2px solid green; */
+        justify-content: space-between;
+        width: 45%;
+        align-items: center;
+      }
+      .inputDetails > input{
+
+        padding: 6px 5px;
+      }
+      .dateInput input:first-child{
+        font-size: 23px;
+      }
+      .dateInput input:last-child{
+        width: 75px;
+        padding: 10px 3px;
+        font-size: 20px;
+      }
+      .paymentDetails button{
+        margin: 20px 0px;
+        margin-bottom: 50px;
+        background-color: orange;
+        color: black;
+        font-family: monospace;
+        text-transform: capitalize;
+        /* border: 2px solid gray; */
+        border-radius: 10px;
+      }
+      .paymentDetails h4{
+        font-size: 23px;
+        color:#656d78
+      }
+      .paymentDetails h4 span{
+        color: green;
+        display: inline-block;
+        /* margin-left: 4px; */
+      }
+      .main{
+        box-shadow: 10px 10px 5px gray;
+        /* border: 1px solid red; */
+        
+      }
+      #sign-in{
+        margin-top: 17px;
+      }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="firstd">
+        <div onclick="location.href='index.html';" style="cursor: pointer;" id="main-logo" >
+            <h1>Ban<span>gg</span>ood</h1>
+            <p>Global leading online shop</p>
+        </div>
+        <div id="category"> 
+            <p style="font-weight: 700;"><span id="flow-0">≡ </span> CATEGORIES <span id="flow-1"> > </span>  </p> 
+        </div>
+    </div>
+
+    <div class="center">
+        <div id="search-bar">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="search here" title="Type in a name">
+        </div>
+        <div id="suggestion">
+            <p>XIOMI</p>
+            <p>GAME</p>
+            <p>TOY CAR</p>
+            <p>REMOTE</p>
+            <p>PHONE</p>
+            <p>CLOTHING</p>
+        </div>
+    </div>
+
+    <div class="left-data">
+        <form action="#" id="language">
+            <label for="" style="color: #656d78;">Ship to</label><br>
+            <select name="LANGUAGE" id="lang" style="color: white;">
+                <option value="Language">/ English (India) / INR</option>
+            </select>
+      </form>
+        
+
+      <div id="tap-in">
+        <img  src="https://i.stack.imgur.com/XmWSx.png" alt="">
+        <label for="">Hello</label>
+        <a href="signup.html">
+        <p id="sign-in">Customer</p>
+        </a>
+    </div>
+
+  
+    <div class="figure">
+        <a href="bangcarts.html">
+        <img class="image-main" src="Images/Troley.png"  alt=""></a>
+        <a href="bangcarts.html">
+        <img class="image-hover" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///8AAADb29vs7OylpaW3trX5+fmenp67u7uBgYEYGBhGRkZ+fn4ICAhPT086ODdWVlYlJCNhYWHy8vLi4uLIyMixsbHBwcHg4OBsbGzU1NSrq6tLS0t0dHQ0NDTOzs6UlJQeHh5CQkKLi4uWlpYuLi4UFBRkZGRbW1twcHApKSkMBwFsVXd0AAAKvElEQVR4nO2diXbqvA6FI+Z5KFMpMxRK+d///W6cQCJtp1AOcUK5+tY6ax0nJLXwoG1ZCZ6nKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIry+gxm1WvU8q7fwxToBsu8a/goy1sW0izvKj5G5aaB9J13HR/kcNPCTd5VfJDaLQO3VMy7jg+y+n77ia859VYFKuddRYcMqOqP1Fbe1XAJdTyv+dcH4lUW5HlrGuRdDYeMqeCNaJJ3NRwypJI/EHd5V8Ml9ObLnj8v3K7x5Q/EOlXyroZDSjT0JrTKuxoOKdDY94qfeVfDJUZ495t518IlvYPntSjvWrik6gvvMn3kXQ2HfFDNK/ry9HUJhHf7mHc1XLI9ed70pQfizhfeM3rPuxoOMcL7/a+Ho64yMMKbpnlXwyX7rucdX3ogGuFd/fPhqGsY4f3x0uGoohHerx2O2nQ8b97OuxYuef1wlBHeq6cJR7WI1mnf86nCUTuaHtPXHyYc1d2nfdd/o9EMJ4Z0MeGoHRWegRWtXSgsI7wntzcas2EUxI5SJgxHPQmVIP6XNkE46jSpcUpEM16e9KgnPzEmqsojZXlkcqTO9UsmU+ry8ujgi+Q3ByK5RwnhKKKCKO/MhHT1E9aRBUolv6dIAdyihbxB3f/39Zs630diOIpIZqKUaO7hJ+CSChz5Rh80JIivN2nNi8YtG+eVOkZ4W+GoLRwYWzv+hMFytPCL1vIDI4KecpCS/9OXVmOrZ6SB6U0E4agpdLEJ1s63EIQQWtjDaHqNGniB+JI6m1BEps+8YbqUPLYDkwsJFsKaawAWYjfw/VJXlIswLs2obKTu7w3rIBwle8eMTqI8xFnC26C8Qgv3OKTWJKu/kt+acVtFN7soSeEoHDMDa+pcogH4kQZ+BS2QK2Xq86LxhDU3O2GVhHCU1WbWxNLETogWWt14CpPrp5yf3xzuZpp9YPC0OG1Y7sM7YoeyLYSpqAlXLKQ7NJ5wL0dqauwCtfReYQQtwMt7k33DD5gW4QcqRfOliDuM5BVm5PLynNasXPB7/cDVMi4MR+WOw8yQYB84b/vIaThl4w/5DpVY9nDpSEtR7lGXl6ulDm3FgeqaaPdz0T6wI1qz+1Ev3Chyg1ESn3IaG0P+cAmcma3FQVhbOrsIsvRDOCTTjxxm2SWEo9AhjgkiHei/jQV8aWf5G3Dw/h/lUrfmNjRdDNIU6/yQX0ExJixhWsXVhm2h9G01kmFZ6Q7r5DndXjAqVGZHoQb7QAvHBEkcYKGlZMcgSxciBbu/9V2sw8j0lEKvyAAXj21qDVS00PpKQML4UxsTAEm6KlXCcNSIH+pKVVZEYVrGFSNYaK0GW7B8Jx5zcr5Va24+oDU/NJXj0lrT47BCC62B+23dkCndtfPtdtNBNmJg7YyDEhWSesNqI1julWG9K3slfiHNvuuUiaMVjsJx1oc+hJM/Wmi5l75cbslxmhRnSBczUddEP8Q26sFq6f2mhVt5HjqBGMeJsaJ0Cf9Eu8Eg4qVNm9qbhjwvy3DBAT6/kacb4n7tDNLPTDe5/YiNS9ntOoXQPJbgz3YxvjA+smK9Q6cdLy+IFvUrB5q0x8+3+O031IlLxvk3HKeBroNgJZ/uIRCDkmRAsMNQlJpgB+4PNU6bucOh7azSxw44g0NE/4eyDmeaBTwXh/6Ru8MEwZE+oWziXzs4RPQOViQH2vAblkLgPYQ7TBCNDljixg84REuYYvQNLMTIWlWutoQ7NJ6w6/yxiB1u3kG38g2QooqgW4GFbxBZq8sVc5kO7Epr8eaCCW7AQqPdjC+ChXNw4NBreZOGC3Dnj10HcxmPYOJUgsL0APvRYCGsTTC+umBLpRaFG0+uOZhwFFfLYBJuVJwgrA9tjjoWtjH4ztTJ94Sdg+ec8JtkE/5StgKGrLGRwEKCJoZOzU5bvccVVjhqIWdD3NNFKV6UMxNORFafjxbUIzcpGDbhjNZvXpj3qTFvxsUNbVixOW/QqcnZEvHTRF1xWpb9D28v/+/7be8iBcMmiMnmobr3Yd6Se0JlEbdCVzbKktqiDTfU52VoQ9NmvAf4N+PFJSu6SsGwmQV7I7FQgYE1gdAT5opY41D0OxB9LIRe8KcgJykYNmE4Kp5OwCHioh9ECoSAUQKN5YYvc4dm/naTgmFj/uqexR6kQ8QgNoaqCmihCGBDQg5zh522qxQMm+N/cp9ZOkSIFlphfbkARKEOyR2HWA+Yzn5wkoJhE+YKxD1TLg9QmJYgrC8txEDVN2xpR+PdYQqGDUa84HsHH46LfmkhLunfaM1KrD84TMFIAHJ2ZnKFCFK7DCk30iZcMHfFbMlWh2EKxj9X+U7mMu8KVoiQ5IRJXNJCO2jBv55yfNZ4wqWjFAwbyJ2D2eJLClO0QVpYuxKW4bNUxpn0YTgqmuUqcr8JXDz2Q2khJDx50j3Gtypn+3KOIJRAy3rrDNFb9P9WfUunuNRqTYlarZ/K9R41+IcXRN/s7J6a9ctNs32ixYSDvrKV3eYlORmsfi/sgoXMoX2GqM0gWYSz9qd/PnmISoesnywLw1FRRoTMKBlZwTfRueR22Vr6Uh5a4/HyzJ8OhIDCTERxpfC0VJy0EHR5Sey1xR/N/gnP0zZM3g+RDqFopQSJBYG0EJJJZZPG7jD7p3Rb4jt9Fx0RVlOoU6X3AB0qdzGqF0mbw5PWNRGchWYCYQphfTlMIagv1UK0OszhaflAeMcB9rbwxfD0ABgsLYRnEZpClvYuJ92nYNgcevwlbnIPEQKodC0TDmKNUrX3LyX3KRg230JjyL4mV0DYpHIcbmXkRbZ31L+DvXUZKnBO+BK3WfhA4PuCesPo8cD3KU3f46cFhxtas2JhRuwpxuGJdvwkUZk/Z0iT4D9l9ykYNkZ4/+K9p2mRxxuAjKcelTNiEvqnjC3M+LW0/e3tz6RL08wXxawYlLKJBXOMonnLbiBSZgEMYWGPZqWMyOGV4oGFGS5Jsyew8KVfBaIW/n3Uwr+PWvj3UQv/Pv+nFn6MZ+PVo9sng9FsVn6CF97aFo4uS43tI9H32eUnYb7yNrJKA+/IlHexyZY6m3+t3YgvmHr5vh6uSsPPBvU6Z3qwnOtEZ+6gN4e7xDdpZZMqJC30m2rbDdlu7CVrs3svTfsm/fNf8LtuDmt8FvxKekXW/R014VVi0TCodDJ/yW+Vf6mdBAvv9iSJwcloN2bgPkkfGLNGSn6VxL3dapd4l2jv8b+sf3OqwCyYJtbt3p+mSbxJ1HLO3vbxM9140yyuz3pVip/du2/LNv7xt/5sFLfneSQO5tm/bLtI1OiHRNUxlahsLqXL6d/RuFwWpJCtonuezn8ih3dtV6rHXkCU9B32qPKluD+f/xXH/eWycPcp6vnN4HQ9e3/IiGb5cLcv6m7ru+7Skp3781LM1bQzkdSCNrxvOywaetCGz2DhMBozZmqPx+F9Arx0uSyI38cO6CneXRzVhj5HbC697+GP2CYxlzZuX5kByf6wf/tCQeJNMlcyyaSjadaJd8niKaBfgGsnQ8q6NGeS1hb3J50n/ZTm0/xS2Mqq2r9kTtja+xlcxZlRCgbaJj6Rga8Yp7EZHc812z7ynGcca3vGn7KrfIxLj8dLi6NZ6RnipYqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKLnzPywXu/yApBiVAAAAAElFTkSuQmCC"  alt=""></a>
+    </div>
+  
+    </div>
+
+</div>
+
+  <table style="border: 1px;">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td><img src="https://content.shop4reebok.com/static/Product-EX4296/reebok_EX4296_1.jpg.plp" alt=""></td>
+        <td>Name of ther product</td>
+        <td>34394$</td>
+        <td><button> -</button> <span> 0</span> <button>+</button></td>
+        <td> <img src="https://media.istockphoto.com/vectors/garbage-bin-sign-vector-id1139466631?k=20&m=1139466631&s=612x612&w=0&h=F3hOMYdQTDn4NFEi94i9StIbDxJ1v7mX79lDxz1cXLk=" alt=""></td>
+        <td>10$</td>
+      </tr> -->
+      
+    </tbody>
+  </table>
+
+
+  <div class="main">
+    <div class="cuppon">
+      <input type="text" id="cupCode">
+      <button id="button">Apply coupon  code</button>
+    </div>
+    <div class="price">
+      <h3>Total Price</h3> <h3 id="total">0</h3>
+      </div>
+      <div class="price">
+        <h4>Product Length</h4> <h4 id="productLength"> 10</h4>
+      </div>
+    <div class="paymentDetails">
+      <h4>Payment Method Using <span>Credit / Debit / ATM Card</span></h4>
+      <div class="inputDetails">
+        <input type="text" name="name" id="name" placeholder="Enter your Name" required>
+        <input type="number" name="name" id="number" placeholder="Enter your Card Number" required>
+    
+        <div class="dateInput"> 
+          <input type="month" name="month" id="month" placeholder="MM/YYYY" required>
+          <input type="number" name="cvv" id="cvv" placeholder="CVV" required>
+          
+        </div>
+        <button id="payment">Pay<span  id="span"></span></button>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+<div id="footer-beg">
+    <div>
+        <img src="Images/foot-beg.png" alt="">
+    </div>
+    
+</div>
+<!--------------Footer-Beg DONE------------------------------------------------------------> 
+<div class="footer">
+    <div id="first-foot">
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="m-logo">Get to Know Us</p><br>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Guarantees & Return Policy</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">About Banggood.in</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Contact Us</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Help Center</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Site Map</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Intellectual Property Claims</p><br><br>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="m-logo">Subscribe</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">By subscribing you agree to receive email from us.<br>Please read our Privacy Policy</p><br><br>
+        <input type="email" name="Email" id="footer-email" placeholder="EMAIL ADDRESS">
+    </div>
+    <div id="second-foot">
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="m-logo">Payment & Shipping</p><br>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Payment Methods</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">BGpay Instruction</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Shipping Guide</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Locations We Ship To</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Estimated Delivery Time</p><br>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="m-logo">Partnership Programs</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Drop shipping</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Review Club</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Affiliate Program</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Wholesale Program</p>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Fashion Blogger Program</p>
+        
+    </div>
+    <div id="third-foot">
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="m-logo">Download App</p><br>
+        <div id="footer-dicon">
+            <img style="height: 50px; width: 50px;" src="https://www.jarir.com/cdn-cgi/image/fit=contain,width=400,height=auto,quality=100,metadata=none/https://wp-media.jarir.com/wp-content/uploads/2021/11/1-Apple-1.png" alt="">
+            <img style="height: 50px; width: 50px;" src="https://obs-tv.com/wp-content/uploads/2019/04/Android-TV-OBS-Icon.png" alt="">
+            <img  style="height: 50px; width: 100px; border-radius: 5px;" src="https://img.freepik.com/free-vector/template-scan-me-qr-code-smartphone-qr-code-mobile-app-payment-phone-viewfinder-grid-focus-button-vector-illustration_288189-324.jpg?w=2000" alt="">
+        </div><br>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="m-logo">Follow Us</p><br>
+        <img style="height: 150px; width: 250px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI8c2cStFntFArlkiY0vT0q40H3SY8FBTRqg&usqp=CAU=" alt="">
+        <br>
+        <p onclick="location.href='Index.html';" style="cursor: pointer;" id="main-log">Fashion Blogger Program <br>TERMS  PRIVACY  SPECIALIZED AFFAIRS</p>
+    </div>
+    
+
+
+
+</div>
+<!--------------Footer DONE------------------------------------------------------------>
+<div id="footer-end">
+    <div>
+        <img src="Images/footend.png" alt="">
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+  // let count=1;
+  let addToCart=JSON.parse(localStorage.getItem('addToCart')) || [];
+  document.getElementById('productLength').innerText=addToCart.length;
+  function display(addToCart){
+    document.querySelector('tbody').innerHTML='';
+    addToCart.forEach(function(e,i){
+      let tbody=document.querySelector('tbody');
+      let tr=document.createElement('tr');
+      let td=document.createElement('td');
+      let img=document.createElement('img');
+      img.setAttribute('src',e.image_url);
+      td.append(img);
+      let td1=document.createElement('td');
+      td1.innerText=e.name;
+      let td2=document.createElement('td');
+      td2.innerText=e.price;
+      let td3=document.createElement('td');
+      let btn1=document.createElement('button');
+      btn1.innerText='-';
+      let span=document.createElement('span');
+      span.innerText='1';
+      let btn2=document.createElement('button');
+      btn2.innerText='+';
+      td3.append(btn1,span,btn2);
+      let td4=document.createElement('td');
+      let img2=document.createElement('img');
+      img2.setAttribute('src','https://media.istockphoto.com/vectors/garbage-bin-sign-vector-id1139466631?k=20&m=1139466631&s=612x612&w=0&h=F3hOMYdQTDn4NFEi94i9StIbDxJ1v7mX79lDxz1cXLk=')
+      td4.appendChild(img2);
+      img2.addEventListener('click',function(){
+          deleteProduct(e,i)
+      })
+      let td5=document.createElement('td');
+      td5.innerText=e.price;
+      
+      tr.append(td,td1,td2,td3,td4,td5);
+      tbody.appendChild(tr);
+      btn2.addEventListener('click',function(){
+        let acutal=e.price;
+        productQuantityPlus(span,td5,acutal) 
+      })
+      btn1.addEventListener('click',function(){
+        let acutal=e.price;
+        productQuantityMinus(span,td5,acutal)
+      })
+
+    })
+  }
+// delete Product Page 
+function deleteProduct(e,i){
+  addToCart.splice(i,1);
+localStorage.setItem('addToCart',JSON.stringify(addToCart));
+display(addToCart)
+window.location.reload();
+}
+// increase Product quantity 
+let dataArray=[];
+let latestArray=[];
+function productQuantityPlus(span,price,acutalPrice){
+latestArray=dataArray;
+dataArray=[];
+let count=+span.innerText;
+let acutalData=+acutalPrice;
+count++;
+span.innerText=count;
+let prices=count*acutalData;
+price.innerText=prices;
+dataArray.push(prices);
+console.log(prices,count);
+total();
+}
+// decrease product quantity 
+function productQuantityMinus(span,price,acutalPrice){
+let currentPrice=+price.innerText;
+let acutalData=+acutalPrice;
+let count=+span.innerText;
+if(count==1){
+    count=1;
+    span.innerText=count;
+  }
+  else{
+    count--;
+    span.innerText=count;
+  }
+  if(currentPrice==acutalData){
+    price.innerText=acutalData;
+  }
+  else{
+    price.innerText=currentPrice-acutalData;
+  }
+  total();
+  
+  // console.log(currentPrice);
+
+}
+
+// put the total pize of the product 
+function total(){
+// console.log('hello')
+let totalData=document.querySelectorAll('tbody td:last-child');
+let totalPrice=0;
+let priceTag=document.getElementById('total')
+totalData.forEach(function(e){
+ 
+  // console.log(priceTag)
+  let data=+e.innerText
+  console.log(e.innerText);
+  totalPrice+=data;
+  priceTag.innerText=totalPrice;
+  document.getElementById('span').innerText=totalPrice;
+})
+
+}   
+
+
+
+  display(addToCart);
+  total();
+  // apply cuupon code
+document.querySelector('#button').addEventListener('click',applyCupponCode);
+
+function applyCupponCode(){
+  console.log("hello")
+ let input=document.querySelector('#cupCode').value;
+
+ let totals;
+ let totalData=+document.querySelector('#total').innerText;
+ if(document.querySelector('#cupCode').value==''){
+  alert("coupon not applied")
+ }else{
+  if(input =="sachin30"){    
+    totals= (totalData/100)*70;
+    document.querySelector('#total').innerText=totals;
+    alert("coupon Applied")
+    document.querySelector('#cupCode').value='';
+  }
+ }
+ //console.log(totalData)
+ 
+
+}
+// payment gatway 
+document.getElementById('payment').addEventListener('click',function(){
+let cardNumber='123456789';
+let date='2027-01';
+let cvv='123';
+let inputDate=document.getElementById('month').value;
+let inputCard=document.getElementById('number').value;
+let inputCvv=document.getElementById('cvv').value;
+if(inputCard==cardNumber && inputDate==date && cvv==inputCvv){
+  window.location.href='otp.html';
+}
+else{
+  alert('Wrong Details')
+}
+
+
+
+})
+
+
+</script>
+
